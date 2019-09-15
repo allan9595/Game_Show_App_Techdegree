@@ -218,6 +218,10 @@ div#qwerty.section{
     margin: 0;
   }
 
+
+  h2.header {
+    font-size: var(--font-size-large);
+  }
   button {
     margin: 6px;
     border: 1px solid transparent;
