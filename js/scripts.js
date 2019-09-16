@@ -12,6 +12,25 @@ const keyborad = $("#qwerty");
 const phraseElement = $("phrase");
 let missed = 0;
 
+const buttonClick = () => {
+    $("#qwerty .keyrow button").click((e) => {
+        $(e.target).addClass("chosen"); //add chosen class
+        $(e.target).prop('disabled', true); //add disabled 
+        
+        let letterFound = checkLetter($(e.target).text()); //pass the letter to the check letter
+    
+        //remove a heart if miss one 
+        if(letterFound === null){
+            $($('#scoreboard ol li')[0]).remove();
+            $('#scoreboard ol').append(`<li class="tries"><img src="images/lostHeart.png" height="35px" width="30px"></li>`);
+            missed += 1; 
+            
+        } 
+    
+        checkWin();
+    })
+}
+
 const keyboard = () => {
     addEventListener('keyup', (e) => {
 
@@ -50,6 +69,7 @@ const startGame = () => {
         const phraseArray = getRandomPhraseAsArray(phrase);       
         addPhraseToDisplay(phraseArray);
         keyboard();
+        buttonClick();
     })
 }
 
@@ -157,21 +177,6 @@ startGame();
 //event listener on the keyboard
 
 
-$("#qwerty .keyrow button").click((e) => {
-    $(e.target).addClass("chosen"); //add chosen class
-    $(e.target).prop('disabled', true); //add disabled 
-    
-    let letterFound = checkLetter($(e.target).text()); //pass the letter to the check letter
 
-    //remove a heart if miss one 
-    if(letterFound === null){
-        $($('#scoreboard ol li')[0]).remove();
-        $('#scoreboard ol').append(`<li class="tries"><img src="images/lostHeart.png" height="35px" width="30px"></li>`);
-        missed += 1; 
-        
-    } 
-
-    checkWin();
-})
 
 
