@@ -3,6 +3,8 @@
 
 This moblie version wheel of success build with html, css and jquery. Have fun!
 
+This app supports keyborad typing and mouse clicking!
+
 The media-query breakpoint is 768px.
 
 You can visit the live version at [https://allan9595.github.io/Game_Show_App_Techdegree/](https://allan9595.github.io/Game_Show_App_Techdegree/)
