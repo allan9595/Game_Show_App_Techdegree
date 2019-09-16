@@ -136,8 +136,6 @@ const checkWin = () => {
     
     let lengthLetters = $("#phrase ul li.letter").length;
     let lengthShows = $("#phrase ul li.letter.show").length;
-    console.log(lengthLetters);
-    console.log(lengthShows);
     if((lengthLetters === lengthShows) && missed <5 && (lengthLetters !== 0) && (lengthShows !==0)){
         $("#overlay").removeClass("start");
         $("#overlay").addClass("win");
