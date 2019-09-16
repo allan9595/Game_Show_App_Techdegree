@@ -128,6 +128,10 @@ const addPhraseToDisplay = (arr) => {
         if(arr[i] != " "){
             $($("#phrase ul li")[i]).addClass("letter"); //add class letter to char
         }
+
+        if(arr[i] == " "){
+            $($("#phrase ul li")[i]).addClass("space"); //add class letter to char
+        }
     }
 }
 
